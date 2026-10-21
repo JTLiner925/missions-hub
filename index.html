@@ -21,6 +21,7 @@
   header.top{position:sticky;top:0;z-index:20;background:rgba(18,41,58,.96);backdrop-filter:blur(6px)}
   header.top .wrap{display:flex;align-items:center;gap:18px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
   header.top strong{color:#fff;white-space:nowrap}
+  header.top a.brand{color:#fff;font-size:16px;padding:0}
   header.top a{white-space:nowrap;text-decoration:none;color:#b9cad6;font-size:14px}
   header.top a:hover{color:#fff}
 
@@ -303,7 +304,7 @@
 </svg>
 
 <header class="top"><div class="wrap">
-  <strong>Missions Hub</strong>
+  <a class="brand" href="#stats" aria-label="Missions Hub home"><strong>Missions Hub</strong></a>
   <nav role="tablist" aria-label="Sections" style="display:flex;gap:6px">
   <a role="tab" href="#stats">The Need</a><a role="tab" href="#tools">Evangelism Tools</a><a role="tab" href="#books">Books</a><a role="tab" href="#sermons">Sermons</a><a role="tab" href="#media">Videos &amp; Films</a><a role="tab" href="#prayer">Prayer</a><a role="tab" href="#family">Family</a><a role="tab" href="#contact">Contact Us</a>
   </nav>
@@ -589,7 +590,8 @@ document.addEventListener('error',e=>{
     const a=e.target.closest('a[href^="#"]'); if(!a) return;
     const id=a.getAttribute('href').slice(1);
     if(!ids.includes(id)) return;
-    e.preventDefault(); show(id,true);
+    e.preventDefault();
+    if(a.classList.contains('brand')){show(id,false);window.scrollTo({top:0,behavior:'smooth'});}else show(id,true);
   });
   window.addEventListener('hashchange',()=>show(location.hash.slice(1),false));
   let start='';try{start=location.hash.slice(1);}catch(e){}
