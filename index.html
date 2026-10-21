@@ -32,8 +32,44 @@
   .btn.ghost{background:transparent;border:1px solid #ffffff77}
 
   /* bands */
-  .band{padding:48px 0 56px;display:none;min-height:70vh}
+  .band{padding:0 0 56px;display:none;min-height:70vh}
   .band.active{display:block}
+  .band .body{padding-top:36px}
+  .banner{min-height:240px;display:flex;align-items:flex-end;color:#fff;padding:56px 0 28px;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.72)),var(--img) center/cover no-repeat;background-color:#1b3b52}
+  .banner .kicker{color:#fff!important;opacity:.85}
+  .banner .lead{margin-bottom:0}
+  .b-contact{background:#0f4c5c;color:#fff}
+  .uotd{background:#fff;color:var(--ink);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+  .uotd-head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #eee}
+  .uotd-head strong{font-size:17px}
+  .uotd-head a{color:var(--green);font-weight:600;font-size:14px;text-decoration:none;margin-left:14px}
+  .uotd iframe{display:block;width:100%;height:760px;border:0;background:#fff}
+  .uotd-note{padding:10px 16px;font-size:13px;color:var(--muted);border-top:1px solid #eee}
+  .team{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+  .person{background:#fff;color:var(--ink);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.18);display:flex;flex-direction:column}
+  .person img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;display:block;background:#dfe6ea}
+  .person .pbody{padding:16px;text-align:center;display:flex;flex-direction:column;gap:2px;flex:1}
+  .person h4{margin:0;font-size:19px}
+  .person .title{color:var(--muted);font-size:14px;margin-bottom:12px}
+  .person .email{font-size:13px;color:var(--muted);word-break:break-all;margin-bottom:12px}
+  .person .btns{display:flex;gap:8px;margin-top:auto}
+  .person .btns>*{flex:1;text-align:center;padding:9px 8px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;cursor:pointer;border:1.5px solid #0f4c5c;font-family:inherit}
+  .person .bio-btn{background:#fff;color:#0f4c5c}
+  .person .contact-btn{background:#0f4c5c;color:#fff}
+  .person .bio-btn:hover{background:#eef4f6}
+  .person .contact-btn:hover{background:#0b3a47}
+  .general{margin-top:28px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:18px 20px}
+  .general a{color:#ffd98a}
+  dialog.bio{border:0;border-radius:16px;padding:0;max-width:560px;width:calc(100% - 32px);box-shadow:0 20px 60px rgba(0,0,0,.4);color:var(--ink)}
+  dialog.bio::backdrop{background:rgba(0,0,0,.6)}
+  dialog.bio .bhead{display:flex;gap:16px;align-items:center;padding:20px 20px 0}
+  dialog.bio .bhead img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:top}
+  dialog.bio h3{margin:0;font-size:22px;border:0;padding:0}
+  dialog.bio .btitle{color:var(--muted);font-size:14px}
+  dialog.bio .btext{padding:14px 20px 8px;font-size:15.5px}
+  dialog.bio .bfoot{display:flex;gap:10px;flex-wrap:wrap;padding:8px 20px 20px}
+  dialog.bio .bfoot a,dialog.bio .bfoot button{padding:9px 14px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;border:1.5px solid #0f4c5c;background:#fff;color:#0f4c5c;cursor:pointer;font-family:inherit}
+  dialog.bio .bfoot a.primary{background:#0f4c5c;color:#fff}
   header.top a[role="tab"]{padding:6px 12px;border-radius:99px}
   header.top a[role="tab"][aria-selected="true"]{background:var(--accent);color:#fff;font-weight:600}
   .band h2{font-size:clamp(28px,4vw,38px);margin:0 0 6px;letter-spacing:-.015em;line-height:1.15}
@@ -150,7 +186,7 @@
 <header class="top"><div class="wrap">
   <strong>Missions Hub</strong>
   <nav role="tablist" aria-label="Sections" style="display:flex;gap:6px">
-  <a role="tab" href="#stats">The Need</a><a role="tab" href="#tools">Evangelism Tools</a><a role="tab" href="#books">Books</a><a role="tab" href="#sermons">Sermons</a><a role="tab" href="#media">Videos &amp; Films</a><a role="tab" href="#prayer">Prayer</a><a role="tab" href="#family">Family</a>
+  <a role="tab" href="#stats">The Need</a><a role="tab" href="#tools">Evangelism Tools</a><a role="tab" href="#books">Books</a><a role="tab" href="#sermons">Sermons</a><a role="tab" href="#media">Videos &amp; Films</a><a role="tab" href="#prayer">Prayer</a><a role="tab" href="#family">Family</a><a role="tab" href="#contact">Contact Us</a>
   </nav>
 </div></header>
 
@@ -161,10 +197,9 @@
 </div></div>
 
 <!-- ============ THE NEED ============ -->
-<section id="stats" class="band b-stats"><div class="wrap">
-  <div class="kicker">The Need</div>
+<section id="stats" class="band b-stats"><div class="banner" style="--img:url(img/banners/stats.jpg)"><div class="wrap"><div class="kicker">The Need</div>
   <h2>The Task at a Glance</h2>
-  <p class="lead">Key numbers on global Christianity, unreached peoples, and where missions resources go.</p>
+  <p class="lead">Key numbers on global Christianity, unreached peoples, and where missions resources go.</p></div></div><div class="wrap body">
 
   <h3 style="margin-top:0">The 10/40 Window</h3>
   <div class="graphic">
@@ -271,57 +306,83 @@
 </div></section>
 
 <!-- ============ TOOLS ============ -->
-<section id="tools" class="band b-tools"><div class="wrap">
-  <div class="kicker">Get Equipped</div>
+<section id="tools" class="band b-tools"><div class="banner" style="--img:url(img/banners/tools.jpg)"><div class="wrap"><div class="kicker">Get Equipped</div>
   <h2>Evangelism Tools</h2>
-  <p class="lead">Simple, reproducible tools from <a href="https://noplaceleft.net/tools/">NoPlaceLeft</a> that anyone can learn and teach. Tap a video to watch it right here.</p>
+  <p class="lead">Simple, reproducible tools from <a href="https://noplaceleft.net/tools/">NoPlaceLeft</a> that anyone can learn and teach. Tap a video to watch it right here.</p></div></div><div class="wrap body">
   <div class="grid tools" id="toolGrid"></div>
   <p class="note">More at <a href="https://noplaceleft.net/tools/">noplaceleft.net/tools</a>.</p>
 </div></section>
 
 <!-- ============ BOOKS ============ -->
-<section id="books" class="band b-books"><div class="wrap">
-  <div class="kicker" style="color:var(--accent)">Read</div>
+<section id="books" class="band b-books"><div class="banner" style="--img:url(img/banners/books.jpg)"><div class="wrap"><div class="kicker" style="color:var(--accent)">Read</div>
   <h2>Books</h2>
-  <p class="lead">Each book links to Amazon so you can pick up a copy.</p>
+  <p class="lead">Each book links to Amazon so you can pick up a copy.</p></div></div><div class="wrap body">
   <div id="bookGroups"></div>
 </div></section>
 
 <!-- ============ SERMONS ============ -->
-<section id="sermons" class="band b-sermons"><div class="wrap">
-  <div class="kicker" style="color:var(--navy2)">Listen</div>
+<section id="sermons" class="band b-sermons"><div class="banner" style="--img:url(img/banners/sermons.jpg)"><div class="wrap"><div class="kicker" style="color:var(--navy2)">Listen</div>
   <h2>Sermons</h2>
-  <p class="lead">Messages on God's heart for the nations.</p>
+  <p class="lead">Messages on God's heart for the nations.</p></div></div><div class="wrap body">
   <div id="sermonGroups"></div>
 </div></section>
 
 <!-- ============ MEDIA ============ -->
-<section id="media" class="band b-media"><div class="wrap">
-  <div class="kicker" style="color:var(--gold)">Watch</div>
+<section id="media" class="band b-media"><div class="banner" style="--img:url(img/banners/media.jpg)"><div class="wrap"><div class="kicker" style="color:var(--gold)">Watch</div>
   <h2>Videos, Films &amp; Podcasts</h2>
-  <p class="lead">Tap a thumbnail to play it on this page.</p>
+  <p class="lead">Tap a thumbnail to play it on this page.</p></div></div><div class="wrap body">
   <div id="mediaGroups"></div>
 </div></section>
 
 <!-- ============ PRAYER ============ -->
-<section id="prayer" class="band b-prayer"><div class="wrap">
-  <div class="kicker">Pray</div>
+<section id="prayer" class="band b-prayer"><div class="banner" style="--img:url(img/banners/prayer.jpg)"><div class="wrap"><div class="kicker">Pray</div>
   <h2>Pray for the Nations</h2>
-  <p class="lead">Prayer is where missions begins.</p>
+  <p class="lead">Prayer is where missions begins.</p></div></div><div class="wrap body">
+  <h3 style="margin-top:0">Unreached of the Day</h3>
+  <p class="lead" style="margin-bottom:14px">A different unreached people group is featured every day. Pray for them today.</p>
+  <div class="uotd">
+    <div class="uotd-head">
+      <strong>Today's people group</strong>
+      <span><a href="https://joshuaproject.net/pray/unreachedoftheday/today" target="_blank" rel="noopener">Open full page</a><a href="https://joshuaproject.net/pray/unreachedoftheday/email" target="_blank" rel="noopener">Daily email</a><a href="https://joshuaproject.net/pray/unreachedoftheday/app" target="_blank" rel="noopener">App</a><a href="https://joshuaproject.net/pray/unreachedoftheday/podcast" target="_blank" rel="noopener">Podcast</a></span>
+    </div>
+    <iframe src="https://joshuaproject.net/pray/unreachedoftheday/today" title="Unreached of the Day from Joshua Project" loading="lazy" referrerpolicy="no-referrer"></iframe>
+    <div class="uotd-note">Provided live by <a href="https://joshuaproject.net/" target="_blank" rel="noopener" style="color:var(--green)">Joshua Project</a>. If it doesn't load, use "Open full page" above.</div>
+  </div>
+  <h3>More ways to pray</h3>
   <div class="grid" id="prayerGrid"></div>
 </div></section>
 
 <!-- ============ FAMILY ============ -->
-<section id="family" class="band b-family"><div class="wrap">
-  <div class="kicker" style="color:#8a5a00">Family</div>
+<section id="family" class="band b-family"><div class="banner" style="--img:url(img/banners/family.jpg)"><div class="wrap"><div class="kicker" style="color:#8a5a00">Family</div>
   <h2>Missions for Families</h2>
-  <p class="lead">Help your kids grow up with a heart for the world.</p>
+  <p class="lead">Help your kids grow up with a heart for the world.</p></div></div><div class="wrap body">
   <div class="grid" id="familyGrid"></div>
 </div></section>
 
-<footer><div class="wrap">Resources compiled from a shared missions resource list, NoPlaceLeft, and The Traveling Team. Third-party content, book covers, and videos belong to their owners.</div></footer>
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="band b-contact"><div class="banner" style="--img:url(img/banners/contact.jpg)"><div class="wrap">
+  <div class="kicker">Get in Touch</div>
+  <h2>Contact Us</h2>
+  <p class="lead">Want to take a next step in missions? Reach out to the missions team at The Well Austin.</p>
+</div></div><div class="wrap body">
+  <div class="team" id="teamGrid"></div>
+  <div class="general">
+    <strong>General questions:</strong> <a href="mailto:info@thewellaustin.com">info@thewellaustin.com</a><br>
+    The Well Austin, 1106 Clayton Lane, Suite #350W, Austin, Texas 78723 · <a href="https://thewellaustin.com/team/" target="_blank" rel="noopener">Meet the whole team</a>
+  </div>
+</div></section>
+
+<dialog class="bio" id="bioDialog" aria-labelledby="bioName">
+  <div class="bhead"><img id="bioImg" alt=""><div><h3 id="bioName"></h3><div class="btitle" id="bioTitle"></div></div></div>
+  <div class="btext" id="bioText"></div>
+  <div class="bfoot"><a class="primary" id="bioMail" href="#">Email</a><a id="bioFull" href="#" target="_blank" rel="noopener">Full bio</a><button type="button" id="bioClose">Close</button></div>
+</dialog>
+
+<footer><div class="wrap">Resources compiled from a shared missions resource list, NoPlaceLeft, and The Traveling Team. Third-party content, book covers, and videos belong to their owners. Banner photos from Unsplash. Unreached of the Day courtesy of Joshua Project.</div></footer>
 
 <script>
+// image path helper: the standalone build injects window.IMG with inlined copies of every image
+const I=p=>(window.IMG&&window.IMG[p])||p;
 const amz = (t,a)=>'https://www.amazon.com/s?k='+encodeURIComponent(t+' '+(a||''));
 const ytId = u=>{const m=(u||'').match(/(?:youtu\.be\/|v=)([\w-]{11})/);return m?m[1]:null;};
 const esc = s=>String(s).replace(/"/g,'&quot;');
@@ -348,7 +409,7 @@ function card(o){
   return `<div class="card">${mediaBlock(o)}<div class="body">${o.tag?`<span class="tag">${o.tag}</span>`:''}<h4>${o.title}</h4>${o.by?`<div class="by">${o.by}</div>`:''}<p>${o.desc||''}</p><div class="links">${links}</div></div></div>`;
 }
 function bookCard(o){
-  const cover=o.cover?`<div class="cover"><img loading="lazy" src="img/covers/${o.cover}.jpg" alt="Cover of ${esc(o.title)}" data-title="${esc(o.title)}"></div>`:`<div class="cover"><div class="ph">${o.title}</div></div>`;
+  const cover=o.cover?`<div class="cover"><img loading="lazy" src="${I('img/covers/'+o.cover+'.jpg')}" alt="Cover of ${esc(o.title)}" data-title="${esc(o.title)}"></div>`:`<div class="cover"><div class="ph">${o.title}</div></div>`;
   const buy=o.amazon?`<a class="btn-amz" href="${o.amazon}" target="_blank" rel="noopener">Buy on Amazon</a>`:(o.links||[]).map(l=>`<a class="btn-amz" href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a>`).join('');
   return `<div class="card book">${cover}<div class="body"><h4>${o.title}</h4>${o.by?`<div class="by">${o.by}</div>`:''}<p>${o.desc||''}</p>${buy}</div></div>`;
 }
@@ -391,6 +452,38 @@ document.addEventListener('error',e=>{
   window.addEventListener('hashchange',()=>show(location.hash.slice(1),false));
   let start='';try{start=location.hash.slice(1);}catch(e){}
   show(start,false);
+})();
+
+// contact: team cards with a bio dialog
+const TEAM=[
+ {id:'tyler',name:'Tyler Collins',title:'Missions Director',email:'tyler@thewellaustin.com',url:'https://thewellaustin.com/team/tyler/',
+  bio:'Tyler grew up in McKinney, Texas, and studied petroleum engineering at the University of Oklahoma, where a campus ministry shaped his faith and discipleship. After years in wealth management in Austin, he and his wife, Margaux, married in 2019 and committed to making Jesus known among unreached people groups, both locally and around the world. Their hope is to help launch 100 churches overseas over the next 50 years. Tyler enjoys coffee, trying new foods, and golf.'},
+ {id:'hayley',name:'Hayley Doyle',title:'Missions Coordinator',email:'hayley@thewellaustin.com',url:'https://thewellaustin.com/team/hayley/',
+  bio:'Hayley was born and raised in Houston, Texas, and studied Exercise Science at the University of Texas, planning to become a physical therapist. In her junior year she felt captivated by God and called into international missions. After working for international nonprofits, she joined The Well\'s Missions team. She is passionate about fostering hope and healing, making disciples, and equipping every follower of Jesus for the Great Commission.'},
+ {id:'jt',name:'JT Liner',title:'Lead Missions Mobilizer',email:'jt@thewellaustin.com',url:'https://thewellaustin.com/team/jt/',
+  bio:'JT helps people at The Well discover God\'s heart for the nations and take steps toward sharing the gospel, especially among the unreached. Rescued by Jesus from addiction and hopelessness more than 20 years ago, he loves helping others grow in faith and purpose. He is married to Christy and they have three children: Jackson, Avery, and Erinn. JT enjoys deep conversations about Scripture, dry humor, creative pursuits, and hiking with friends.'},
+ {id:'morgan',name:'Morgan Ash',title:'Operations Coordinator',email:'morgan@thewellaustin.com',url:'https://thewellaustin.com/team/morgan/',
+  bio:'Morgan was born and raised in Basalt, Colorado, with little Christian community around her. Her faith journey began in her sophomore year of high school, and she ended up at Baylor University. After graduating she moved to Austin and taught kindergarten in Austin ISD, where she saw God\'s love for children up close. Over the past year God invited her to live more open-handedly, which led her to work at The Well.'},
+ {id:'riley',name:'Riley Sloan',title:'Missions Resident',email:'riley@thewellaustin.com',url:'https://thewellaustin.com/team/riley/',
+  bio:'Riley grew up in Waco, Texas, and was drawn to the nations early through overseas experiences and friendships at Baylor University. After a biblical study and leadership program in Missouri, she moved to Austin and worked as a social worker serving the unhoused. She joined The Well\'s Missions Residency to pursue ministry among the nations and hopes to move overseas long term. Riley is passionate about the gospel for every tribe, tongue, and nation.'}
+];
+document.getElementById('teamGrid').innerHTML=TEAM.map(p=>`<div class="person"><img src="${I('img/team/'+p.id+'.jpg')}" alt="Photo of ${p.name}" loading="lazy"><div class="pbody"><h4>${p.name}</h4><div class="title">${p.title}</div><div class="email">${p.email}</div><div class="btns"><button type="button" class="bio-btn" data-bio="${p.id}">Read Bio</button><a class="contact-btn" href="mailto:${p.email}">Contact</a></div></div></div>`).join('');
+(function(){
+  const d=document.getElementById('bioDialog');
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('[data-bio]');
+    if(b){
+      const p=TEAM.find(x=>x.id===b.dataset.bio);
+      document.getElementById('bioImg').src=I('img/team/'+p.id+'.jpg');
+      document.getElementById('bioName').textContent=p.name;
+      document.getElementById('bioTitle').textContent=p.title;
+      document.getElementById('bioText').textContent=p.bio;
+      document.getElementById('bioMail').href='mailto:'+p.email;
+      document.getElementById('bioFull').href=p.url;
+      if(d.showModal) d.showModal(); else d.setAttribute('open','');
+    }
+    if(e.target.id==='bioClose'||e.target===d) d.close();
+  });
 })();
 
 // pictograms
